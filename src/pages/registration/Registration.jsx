@@ -6,7 +6,7 @@ const image=`https://img.freepik.com/free-vector/home-screen-concept-illustratio
 
 const Registration = () => {
 
-  const {createUserUsingGoogle,createUserUsingEmail,updateUserProfile} = useContext(AuthContext)
+  const {createUserUsingGoogle, createUserUsingEmail, updateUserProfile} = useContext(AuthContext)
 
   const handleRegistration=(event)=>{
     event.preventDefault();
@@ -19,7 +19,7 @@ const Registration = () => {
     .then((result)=>{
       const user = result.user;
       updateUserProfile(user,name,photoUrl)
-      console.log(user)
+      form.reset();
     })
     .catch((error)=>{
         console.log(error.message)
@@ -32,7 +32,7 @@ const Registration = () => {
             <div>
                 <div className='grid grid-cols-2 gap-10 items-center'>
                     <div>
-                        <img className='w-full' src={image} alt="" />
+                        <img className='w-full' src={image} alt="Registration" />
                     </div>
                     <div className='border p-10'>
                         <h3 className='text-4xl text-center mb-10 font-bold'>Registration</h3>
