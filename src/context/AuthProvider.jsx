@@ -8,6 +8,7 @@ import {
     onAuthStateChanged,
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
+    updateProfile,
 } from "firebase/auth";
 import app from '../utils/firebase/firebase.config';
 export const AuthContext = createContext(null);
@@ -34,6 +35,16 @@ const AuthProvider = ({children}) => {
         return createUserWithEmailAndPassword(auth,email,password)
     }
 
+    //user profile update
+    const updateUserProfile=(user,name,photo)=>{
+        updateProfile(user,{
+            displayName:name,
+            photoURL:photo
+        })
+        .then((result)=>console.log(result))
+        .catch((error)=>console.log(error.message))
+
+    }
     // user login 
     const userLogin=(email,password)=>{
        return signInWithEmailAndPassword(auth,email,password)
@@ -59,6 +70,7 @@ const AuthProvider = ({children}) => {
         user,
         userLogin,
         userLogout,
+        updateUserProfile,
         createUserUsingGoogle,
         createUserUsingEmail
     }
