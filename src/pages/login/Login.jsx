@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthProvider';
 const googleIcon=`https://cdn-icons-png.flaticon.com/512/281/281764.png`;
@@ -7,7 +7,7 @@ const image=`https://img.freepik.com/free-vector/home-screen-concept-illustratio
 const Login = () => {
 
     const {userLogin, createUserUsingGoogle} = useContext(AuthContext);
-
+    const [error, setError] = useState("");
     const handleLogin=(event)=>{
         event.preventDefault();
         const form = event.target;
@@ -19,7 +19,7 @@ const Login = () => {
             console.log(user)
         })
         .catch((error)=>{
-            console.log(error.message)
+            setError(error.message)
         })
     }
 
@@ -33,6 +33,7 @@ const Login = () => {
                     </div>
                     <div className='border p-10'>
                         <h3 className='text-4xl text-center mb-10 font-bold'>Login</h3>
+                        {error && <p className='text-red-600 text-center mb-2'>{error}</p>}
                         <form onSubmit={handleLogin}>
                             <input className='w-full border-b border-[#ddd] mb-5 pb-3 text-base outline-none' type="email" name="email" id="email" placeholder='Enter your email' required/>
                             <input className='w-full border-b border-[#ddd] mb-5 pb-3 text-base outline-none' type="password" name="password" id="password" placeholder='Enter your password' required/>

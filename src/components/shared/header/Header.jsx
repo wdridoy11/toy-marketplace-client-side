@@ -29,7 +29,7 @@ const Header = () => {
                     <Link className='text-base font-medium text-black' to={`/`}>Blogs</Link>
                     {user?<>
                       <div className="tooltip" data-tip={`${user?.displayName}`}>
-                        <img className='w-10 h-10 rounded-full' src={user?.photoURL} alt="" />
+                        <img className='w-10 h-10 rounded-full cursor-pointer' src={user?.photoURL} alt="" />
                       </div>
                       <Link className='py-2 px-5 bg-orange-400 text-white font-semibold text-base' onClick={handleLogout}>Logout</Link>
                     </>:<Link className='py-2 px-5 bg-orange-400 text-white font-semibold text-base' to={'/login'}>Login</Link>}
