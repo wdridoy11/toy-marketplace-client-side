@@ -15,7 +15,7 @@ const About = () => {
                         Educational and learning toys are specially designed playthings that aim to stimulate cognitive development, 
                         enhance learning skills, and promote educational growth in children. These toys are created to be both fun 
                         and educational, offering hands-on experiences that encourage problem-solving, creativity, critical thinking, 
-                        and various other essential skills. They come in a wide range of forms, including puzzles, building blocks, 
+                        and various other essential skills. They come in a wide range of forms, including puzzles, building blocks,
                         science kits, art supplies, board games, coding toys, and more. Educational and learning toys provide 
                         opportunities for children to explore and discover new concepts, develop fine motor skills, expand their 
                         knowledge, and foster a love for learning. By engaging in play-based learning, children can acquire knowledge 
