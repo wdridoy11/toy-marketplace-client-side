@@ -11,7 +11,6 @@ const MyToys = () => {
       setMyToyData(data)
     })
   },[])
-  console.log(myToyData)
 
   return (
     <div>
