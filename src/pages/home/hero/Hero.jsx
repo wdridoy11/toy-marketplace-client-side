@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <div>
       <div className="hero min-h-screen" style={{ backgroundImage: `url(${heroImage})`}}>
-        <div className="hero-overlay bg-opacity-30"></div>
+        <div className="hero-overlay bg-opacity-40"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-xl">
             <h1 className="mb-5 text-5xl font-bold">Engineering kits</h1>
@@ -14,7 +14,7 @@ const Hero = () => {
                 components, materials, and instructions that allow users to build and experiment with various 
                 engineering concepts and principles.
             </p>
-            <button className='py-3 px-10 bg-orange-400 text-white font-semibold text-base'>Get Started</button>
+            <button className='py-3 px-10 bg-orange-400 text-white font-semibold rounded-md text-base hover:bg-black duration-500'>Get Started</button>
           </div>
         </div>
       </div>

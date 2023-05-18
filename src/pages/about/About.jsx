@@ -21,7 +21,7 @@ const About = () => {
                         knowledge, and foster a love for learning. By engaging in play-based learning, children can acquire knowledge 
                         and develop important abilities in an enjoyable and interactive manner.
                     </p>
-                    <Link className='inline-block py-3 px-7 bg-orange-400 text-white font-semibold text-base rounded-md' to={'/'}>Read More</Link>
+                    <Link className='inline-block py-3 px-7 bg-orange-400 text-white font-semibold text-base rounded-md hover:bg-black duration-500' to={'/'}>Read More</Link>
                 </div>
             </div>
         </div>
