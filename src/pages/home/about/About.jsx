@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import aboutImage from '../../assets/about.jpg'
+import aboutImage from '../../../assets/about.jpg'
 const About = () => {
   return (
     <div className='py-20'>

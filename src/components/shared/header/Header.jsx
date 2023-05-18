@@ -23,20 +23,18 @@ const Header = () => {
                 </div>
                 <div className='flex gap-6 items-center'>
                     <Link className='text-base font-medium text-black' to={`/`}>Home</Link>
-                    <Link className='text-base font-medium text-black' to={`/`}>All Toys</Link>
-                    <Link className='text-base font-medium text-black' to={`/`}>My Toys</Link>
-                    <Link className='text-base font-medium text-black' to={`/`}>Add A Toy</Link>
-                    <Link className='text-base font-medium text-black' to={`/`}>Blogs</Link>
+                    <Link className='text-base font-medium text-black' to={`/all_toys`}>All Toys</Link>
+                    {user && <Link className='text-base font-medium text-black' to={`/my_toys`}>My Toys</Link>}
+                    {user && <Link className='text-base font-medium text-black' to={`/add_a_toy`}>Add A Toy</Link>}
+                    <Link className='text-base font-medium text-black' to={`/blogs`}>Blogs</Link>
                     {user?<>
                       <div className="tooltip" data-tip={`${user?.displayName}`}>
                         <img className='w-10 h-10 rounded-full cursor-pointer' src={user?.photoURL} alt="" />
                       </div>
                       <Link className='py-2 px-5 bg-orange-400 text-white font-semibold text-base' onClick={handleLogout}>Logout</Link>
                     </>:<Link className='py-2 px-5 bg-orange-400 text-white font-semibold text-base' to={'/login'}>Login</Link>}
-                    
                 </div>
             </div>
-            
         </div>
     </div>
   )

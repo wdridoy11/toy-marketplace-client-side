@@ -29,7 +29,7 @@ const router = createBrowserRouter([
           element:<AddAToy></AddAToy>
         },
         {
-          path:"blog",
+          path:"blogs",
           element:<></>
         },
         {

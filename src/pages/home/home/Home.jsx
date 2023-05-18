@@ -1,7 +1,7 @@
 import React from 'react'
 import Hero from '../hero/Hero'
-import About from '../../about/About'
 import UserTitle from '../../../components/shared/useTitle/UserTitle'
+import About from '../about/About'
 
 const Home = () => {
   UserTitle("Home")
