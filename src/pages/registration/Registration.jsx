@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthProvider';
 import UserTitle from '../../components/shared/useTitle/UserTitle';
 const googleIcon=`https://cdn-icons-png.flaticon.com/512/281/281764.png`;
-const image=`https://img.freepik.com/free-vector/home-screen-concept-illustration_114360-4703.jpg?w=826&t=st=1684343901~exp=1684344501~hmac=5129c44e94ed4c344739c3c7f5818b6421d3e0b2c50ebfa994cce263cabeb266`
+const registrationImage=`https://img.freepik.com/free-vector/home-screen-concept-illustration_114360-4703.jpg?w=826&t=st=1684343901~exp=1684344501~hmac=5129c44e94ed4c344739c3c7f5818b6421d3e0b2c50ebfa994cce263cabeb266`
 
 const Registration = () => {
   UserTitle("Registration")
@@ -38,7 +38,7 @@ const Registration = () => {
             <div>
                 <div className='grid grid-cols-2 gap-10 items-center'>
                     <div>
-                        <img className='w-full' src={image} alt="Registration" />
+                        <img className='w-full' src={registrationImage} alt="Registration" />
                     </div>
                     <div className='border p-10'>
                         <h3 className='text-4xl text-center mb-10 font-bold'>Registration</h3>
