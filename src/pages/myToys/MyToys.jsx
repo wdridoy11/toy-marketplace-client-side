@@ -12,8 +12,23 @@ const MyToys = () => {
     })
   },[])
 
+  const handleDeleteToy=(id)=>{
+      console.log(id)
+      fetch(`http://localhost:5000/toyMarketplace/${id}`,{
+        method:"DELETE",
+        headers:{
+          "content-type":"application/json"
+        }
+      })
+      .then((res)=>res.json())
+      .then((data)=>{
+        const remaining = myToyData.filter(toy=>toy._id !== id);
+        setMyToyData(remaining);
+      })
+  }
+
   return (
-    <div>
+    <div className='py-20'>
       <div className='container mx-auto'>
         <div>
           <div className="overflow-x-auto w-full">
@@ -34,7 +49,8 @@ const MyToys = () => {
               <tbody>
                 {myToyData.map((toy)=><MyToy 
                     key={toy._id} 
-                    toy={toy}>
+                    toy={toy}
+                    handleDeleteToy={handleDeleteToy}>
                 </MyToy>)}
               </tbody>
             </table>

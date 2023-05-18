@@ -9,7 +9,7 @@ const AddAToy = () => {
   UserTitle("Add A Toy");
   const {user} = useContext(AuthContext)
   const [selectedValue, setSelectedValue] = useState('');
-  const [reatingValue, setReatingValue] = useState();
+  const [ratingValue, setRatingValue] = useState();
 
   const handleAddAToy=(event)=>{
     event.preventDefault();
@@ -21,7 +21,8 @@ const AddAToy = () => {
     const price = form.price.value;
     const quantity = form.quantity.value;
     const description = form.description.value;
-    const addAToy = {name,pictureUrl,sellerName,sellerEmail,price,quantity,description,selectedValue,reatingValue};
+    const addAToy = {name,pictureUrl,sellerName,sellerEmail,price,quantity,description,selectedValue,ratingValue};
+    
     // toy add send data mongodb
     fetch(`http://localhost:5000/toyMarketplace`,{
       method:"POST",
@@ -112,7 +113,7 @@ const AddAToy = () => {
                         <span className="label-text text-base font-medium">Rating</span>
                     </label>
                     <Stack spacing={1}>
-                        <Rating name="half-rating"  onChange={(event,newValue) => {setReatingValue(newValue)}}  defaultValue={4.5} precision={0.5} />
+                        <Rating name="half-rating"  onChange={(event,newValue) => {setRatingValue(newValue)}}  defaultValue={4.5} precision={0.5} />
                     </Stack>
                 </div>
                 <input type="submit" className='py-3 cursor-pointer px-10 bg-orange-400 text-white font-semibold rounded-md text-base hover:bg-black duration-500' value="Add A Toy" />

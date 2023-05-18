@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-const MyToy = ({toy}) => {
+const MyToy = ({toy,handleDeleteToy}) => {
   const {_id,name,pictureUrl,sellerName,sellerEmail,price,quantity,description,selectedValue,reatingValue} = toy;
   return (
     <>
@@ -25,7 +25,7 @@ const MyToy = ({toy}) => {
         <td>{price}</td>
         <td className='flex items-center gap-2'>
             <Link className='p-2 bg-orange-400 text-white rounded-md' to={`/toy_update/${_id}`}><FaEdit></FaEdit></Link>
-            <button className='p-2 bg-orange-400 text-white rounded-md'><FaTrash></FaTrash></button>
+            <button onClick={()=>handleDeleteToy(_id)} className='p-2 bg-orange-400 text-white rounded-md'><FaTrash></FaTrash></button>
         </td>
       </tr>
     </>
