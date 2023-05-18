@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import MyToy from './MyToy'
-
+import MyToy from './MyToy';
+import Swal from 'sweetalert2'
 const MyToys = () => {
 
   const [myToyData,setMyToyData] = useState([])
@@ -13,18 +13,32 @@ const MyToys = () => {
   },[])
 
   const handleDeleteToy=(id)=>{
-      console.log(id)
-      fetch(`http://localhost:5000/toyMarketplace/${id}`,{
-        method:"DELETE",
-        headers:{
-          "content-type":"application/json"
-        }
-      })
-      .then((res)=>res.json())
-      .then((data)=>{
-        const remaining = myToyData.filter(toy=>toy._id !== id);
-        setMyToyData(remaining);
-      })
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You will delete your toy!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/toyMarketplace/${id}`,{
+          method:"DELETE",
+          headers:{
+            "content-type":"application/json"
+          }
+        })
+        .then((res)=>res.json())
+        .then((data)=>{
+          if(data.deletedCount>0){
+            Swal.fire("Deleted!", "Your toy has been deleted successfully", "success");
+          }
+          const remaining = myToyData.filter(toy=>toy._id !== id);
+          setMyToyData(remaining);
+        })
+      }
+    })
   }
 
   return (
