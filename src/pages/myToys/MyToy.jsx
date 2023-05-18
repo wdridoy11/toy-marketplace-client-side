@@ -2,7 +2,7 @@ import React from 'react'
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 const MyToy = ({toy,handleDeleteToy}) => {
-  const {_id,name,pictureUrl,sellerName,sellerEmail,price,quantity,description,selectedValue,reatingValue} = toy;
+  const {_id,name,pictureUrl,sellerName,email,price,quantity,description,selectedValue,reatingValue} = toy;
   return (
     <>
      <tr>
@@ -16,7 +16,7 @@ const MyToy = ({toy,handleDeleteToy}) => {
         <td>{name}</td>
         <td>
             <p className='text-base text-black font-semibold'>{sellerName}</p>
-            <p className='text-sm'>{sellerEmail}</p>
+            <p className='text-sm'>{email}</p>
         </td>
         <td>{selectedValue}</td>
         <td>{description}</td>

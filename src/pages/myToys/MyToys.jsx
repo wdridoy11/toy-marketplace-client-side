@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import MyToy from './MyToy';
 import Swal from 'sweetalert2'
+import { AuthContext } from '../../context/AuthProvider';
 const MyToys = () => {
-
+  const {user} = useContext(AuthContext)
   const [myToyData,setMyToyData] = useState([])
   useEffect(()=>{
-    fetch(`http://localhost:5000/toyMarketplace`)
+    fetch(`http://localhost:5000/mytoyMarketplace?email=${user?.email}`)
     .then((res)=>res.json())
     .then((data)=>{
       setMyToyData(data)
     })
-  },[])
+  },[user])
 
   const handleDeleteToy=(id)=>{
     Swal.fire({

@@ -17,11 +17,11 @@ const AddAToy = () => {
     const name = form.name.value;
     const pictureUrl = form.pictureUrl.value;
     const sellerName = form.sellerName.value;
-    const sellerEmail = form.sellerEmail.value;
+    const email = form.email.value;
     const price = form.price.value;
     const quantity = form.quantity.value;
     const description = form.description.value;
-    const addAToy = {name,pictureUrl,sellerName,sellerEmail,price,quantity,description,selectedValue,ratingValue};
+    const addAToy = {name,pictureUrl,sellerName,email,price,quantity,description,selectedValue,ratingValue};
     
     // toy add send data mongodb
     fetch(`http://localhost:5000/toyMarketplace`,{
@@ -76,7 +76,7 @@ const AddAToy = () => {
                     <label className="label">
                         <span className="label-text text-base font-medium">Seller Email</span>
                     </label>
-                    <input type="email" name='sellerEmail' id='sellerEmail' placeholder="Seller Email" defaultValue={user?.email} className="input input-bordered w-full" required/>
+                    <input type="email" name='email' id='email' placeholder="Seller Email" defaultValue={user?.email} className="input input-bordered w-full" required/>
                 </div>
                 <div className='mb-3'>
                     <label className="label">
