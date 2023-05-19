@@ -48,6 +48,10 @@ const MyToys = () => {
     <div className='py-20'>
       <div className='container mx-auto'>
         <div>
+          <div className='flex justify-end gap-2 mb-5'>
+              <button className='py-3 px-5 bg-orange-400 text-white font-semibold rounded-md'>Ascending</button>
+              <button className='py-3 px-5 bg-orange-400 text-white font-semibold rounded-md'>Descending</button>
+          </div>
           <div className="overflow-x-auto w-full">
             <table className="table w-full">
             <thead>

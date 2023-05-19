@@ -5,7 +5,7 @@ const AllToys = () => {
   const [allToysData,setAllToysData] = useState([]);
   const [searchText, setSearchText] = useState("");
   useEffect(()=>{
-    fetch(`http://localhost:5000/toyMarketplace`)
+    fetch(`http://localhost:5000/toys`)
     .then((res)=>res.json())
     .then((data)=>{
       setAllToysData(data)

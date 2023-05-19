@@ -9,6 +9,7 @@ import MyToys from '../../pages/myToys/MyToys';
 import AddAToy from '../../pages/addAToy/AddAToy';
 import UpdateToy from '../../pages/updateToy/UpdateToy';
 import ToyDetails from '../../pages/allToys/ToyDetails';
+import Error from '../../pages/error/Error';
 const router = createBrowserRouter([
     {
       path: "/",
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
         {
           path:"all_toys",
           element:<AllToys></AllToys>,
-          loader:()=>fetch(`http://localhost:5000/toyMarketplace`)
+          // loader:()=>fetch(`http://localhost:5000/toys`)
         },
         {
           path:"toy_details/:id",
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
         }
       ]
     },
+    {
+      path:"*",
+      element:<Error></Error>
+    }
   ]);
 
 
