@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-const errorImage=`https://img.freepik.com/free-vector/oops-404-error-with-broken-robot-concept-illustration_114360-1932.jpg?w=826&t=st=1684487939~exp=1684488539~hmac=449f30672df8bd54dac7a5941b2c89939b7ee985b479e869dab8ddedad861a87`;
+import errorImage from '../../assets/error.jpg'
+
 const Error = () => {
   return (
     <div className='py-20'>
