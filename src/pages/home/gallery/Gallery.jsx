@@ -3,8 +3,6 @@ import "./gallery.css"
 import LightGallery from 'lightgallery/react';
 import lgZoom from 'lightgallery/plugins/zoom';
 import lgVideo from 'lightgallery/plugins/video';
-import gallery from '../../../assets/about.jpg';
-import engineer from '../../../assets/gallery/engineer-01.jpg';
 
 
 const Gallery = () => {
