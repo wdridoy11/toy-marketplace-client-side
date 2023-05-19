@@ -12,7 +12,7 @@ const AllToys = () => {
   },[])
 
   return (
-    <div>
+    <div className='py-20'>
       <div className='container mx-auto'>
         <div className='grid grid-cols-4 gap-7'>
           {allToysData.map((alltoy)=><AllToy key={alltoy._id} alltoy={alltoy}></AllToy>)}
