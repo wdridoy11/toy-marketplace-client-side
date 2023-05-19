@@ -8,20 +8,20 @@ import UserTitle from '../../components/shared/useTitle/UserTitle';
 const AddAToy = () => {
   UserTitle("Add A Toy");
   const {user} = useContext(AuthContext)
-  const [selectedValue, setSelectedValue] = useState('');
-  const [ratingValue, setRatingValue] = useState();
-
+  const [categoryValue, setcategoryValue] = useState('');
+  const [toyRating, setToyRating] = useState();
+  // handle Add a toy form data
   const handleAddAToy=(event)=>{
     event.preventDefault();
     const form = event.target;
-    const name = form.name.value;
-    const pictureUrl = form.pictureUrl.value;
-    const sellerName = form.sellerName.value;
+    const toy_name = form.toy_name.value;
+    const picture_url = form.picture_url.value;
+    const seller_name = form.seller_name.value;
     const email = form.email.value;
     const price = form.price.value;
     const quantity = form.quantity.value;
     const description = form.description.value;
-    const addAToy = {name,pictureUrl,sellerName,email,price,quantity,description,selectedValue,ratingValue};
+    const addAToy = {toy_name,picture_url,seller_name,email,price,quantity,description,categoryValue,toyRating};
     
     // toy add send data mongodb
     fetch(`http://localhost:5000/toyMarketplace`,{
@@ -34,6 +34,7 @@ const AddAToy = () => {
     .then((res)=>res.json())
     .then((data)=>{
       if(data.insertedId){
+        // sweet alert
         Swal.fire({
           title: 'Success!',
           text: 'Congratulation! Toy added successfully.',
@@ -44,8 +45,8 @@ const AddAToy = () => {
     })
   };
   // Select value get
-  const handleSelectChange = (event) => {
-    setSelectedValue(event.target.value);
+  const handleCategory = (event) => {
+    setcategoryValue(event.target.value);
   };
 
   return (
@@ -56,21 +57,21 @@ const AddAToy = () => {
             <form onSubmit={handleAddAToy}>
                 <div className='mb-3'>
                     <label className="label">
-                        <span className="label-text text-base font-medium">Name</span>
+                        <span className="label-text text-base font-medium">Toy Name</span>
                     </label>
-                    <input type="text" name='name' id='name' placeholder="Name" className="input input-bordered w-full" required/>
+                    <input type="text" name='toy_name' id='toy_name' placeholder="Toy Name" className="input input-bordered w-full" required/>
                 </div>
                 <div className='mb-3'>
                     <label className="label">
                         <span className="label-text text-base font-medium">Picture URL</span>
                     </label>
-                    <input type="text" name='pictureUrl' id='pictureUrl' placeholder="Picture URL" className="input input-bordered w-full" required/>
+                    <input type="text" name='picture_url' id='picture_url' placeholder="Picture URL" className="input input-bordered w-full" required/>
                 </div>
                 <div className='mb-3'>
                     <label className="label">
                         <span className="label-text text-base font-medium">Seller Name</span>
                     </label>
-                    <input type="text" name='sellerName' id='sellerName' placeholder="Seller Name" defaultValue={user?.displayName} className="input input-bordered w-full" required/>
+                    <input type="text" name='seller_name' id='seller_name' placeholder="Seller Name" defaultValue={user?.displayName} className="input input-bordered w-full" required/>
                 </div>
                 <div className='mb-3'>
                     <label className="label">
@@ -82,7 +83,7 @@ const AddAToy = () => {
                     <label className="label">
                         <span className="label-text text-base font-medium">Sub-Category</span>
                     </label>
-                    <select className="select w-full input-bordered" onChange={handleSelectChange} required >
+                    <select className="select w-full input-bordered" onChange={handleCategory} required >
                         <option disabled selected>Pick Sub-Category</option>
                         <option value="Science kits">Science kits</option>
                         <option value="Math learning toys">Math learning toys</option>
@@ -113,7 +114,7 @@ const AddAToy = () => {
                         <span className="label-text text-base font-medium">Rating</span>
                     </label>
                     <Stack spacing={1}>
-                        <Rating name="half-rating"  onChange={(event,newValue) => {setRatingValue(newValue)}}  defaultValue={4.5} precision={0.5} />
+                        <Rating name="half-rating"  onChange={(event,newValue) => {setToyRating(newValue)}}  defaultValue={4.5} precision={0.5} />
                     </Stack>
                 </div>
                 <input type="submit" className='py-3 cursor-pointer px-10 bg-orange-400 text-white font-semibold rounded-md text-base hover:bg-black duration-500' value="Add A Toy" />
