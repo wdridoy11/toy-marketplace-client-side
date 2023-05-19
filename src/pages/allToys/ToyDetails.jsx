@@ -1,8 +1,8 @@
 import React from 'react'
 import { useLoaderData } from 'react-router-dom'
-import { FaUserCircle } from 'react-icons/fa';
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
+
 const ToyDetails = () => {
     const toyData = useLoaderData();
     const {name,pictureUrl,sellerName,email,price,quantity,description,selectedValue,ratingValue} = toyData;
