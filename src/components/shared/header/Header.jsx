@@ -33,7 +33,7 @@ const Header = () => {
                    </Link>
                 </div>
                 <button className="absolute top-10 right-3 text-2xl cursor-pointer block md:hidden" onClick={handleToggle}><FaBars></FaBars></button>
-                <div className={isActive ? "hidden md:flex gap-7 text-white":"flex flex-col mr-7 md:mr-0 md:flex-row gap-7 mt-16 text-white"}>
+                <div className={isActive ? "hidden md:flex md:items-center gap-7 text-white":"flex flex-col mr-7 md:mr-0 md:flex-row gap-7 mt-16 text-white"}>
                     <Link className='text-base font-medium text-black' to={`/`}>Home</Link>
                     <Link className='text-base font-medium text-black' to={`/all_toys`}>All Toys</Link>
                     {user && <Link className='text-base font-medium text-black' to={`/my_toys`}>My Toys</Link>}
@@ -43,8 +43,8 @@ const Header = () => {
                       <div className="tooltip" data-tip={`${user?.displayName}`}>
                         <img className='w-10 h-10 rounded-full cursor-pointer' src={user?.photoURL} alt="" />
                       </div>
-                      <Link className='py-2 px-5 bg-orange-400 text-white font-semibold text-base' onClick={handleLogout}>Logout</Link>
-                    </>:<Link className='py-2 px-5 bg-orange-400 text-white font-semibold text-base' to={'/login'}>Login</Link>}
+                      <Link className='py-2 px-5 bg-orange-400 text-white rounded-md font-semibold text-base' onClick={handleLogout}>Logout</Link>
+                    </>:<Link className='py-2 px-5 bg-orange-400 rounded-md text-white font-semibold text-base' to={'/login'}>Login</Link>}
                 </div>
             </div>
         </div>
