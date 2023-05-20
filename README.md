@@ -1,5 +1,11 @@
 # Getting Started with Create React App
 
+-1. Hello, I have created Educational toy website. I'm using React JS, express JS, Mongodb database tailwind CSS, and daisyui.
+-2. Educational toy website full dynamic. Users can create an account on the website using Google or email, and can login
+-3. After creating user account, he/she will get some features He can create toy, update toy, and delete toy
+-4. Clicking on the View Details button will show the toy details, but if the user is not logged in then it will not be visible.
+-5 He can see his own toy, search toy, and sorting by price. You will see his profile picture and name.
+Website live link:
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

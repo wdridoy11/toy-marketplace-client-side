@@ -4,7 +4,7 @@ const Subscribe = () => {
   return (
     <div className='bg-slate-200 py-20'>
         <div className='container mx-auto'>
-            <div className='w-1/2 mx-auto text-center'>
+            <div className='w-full md:w-1/2 mx-auto text-center'>
                 <div className='mb-8'>
                     <h1 className='text-4xl font-semibold mb-2'>Subscribe Our Educational toy</h1>
                     <p className='text-lg text-black'>If you subscribe now, you can update all educational toy</p>
