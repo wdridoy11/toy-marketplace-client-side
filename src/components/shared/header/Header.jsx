@@ -27,11 +27,13 @@ const Header = () => {
         <div className='container mx-auto'>
             <div className='flex justify-between md:items-center'>
                 <div>
-                  <Link to={'/'}> <img className='w-16 md:w-20' src={logo} alt="" /></Link>
+                  <Link to={'/'}> 
+                      <img className='w-16 md:w-20' src={logo} alt="" />
+                      <span className='text-black font-semibold'>Educational toy</span>
+                   </Link>
                 </div>
                 <button className="absolute top-10 right-3 text-2xl cursor-pointer block md:hidden" onClick={handleToggle}><FaBars></FaBars></button>
                 <div className={isActive ? "hidden md:flex gap-7 text-white":"flex flex-col mr-7 md:mr-0 md:flex-row gap-7 mt-16 text-white"}>
-                {/* <div className='flex gap-6 items-center'> */}
                     <Link className='text-base font-medium text-black' to={`/`}>Home</Link>
                     <Link className='text-base font-medium text-black' to={`/all_toys`}>All Toys</Link>
                     {user && <Link className='text-base font-medium text-black' to={`/my_toys`}>My Toys</Link>}
