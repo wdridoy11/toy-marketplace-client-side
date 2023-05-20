@@ -20,7 +20,6 @@ const AllToys = () => {
     setCurrentPage(0)
   }
 
-
   // get data and pagination data
   useEffect(()=>{
    async function fetchData(){
@@ -35,26 +34,27 @@ const AllToys = () => {
 
    // all toys search data
   const handleSearch=()=>{
-    fetch(`http://localhost:5000/toys/${searchText}`)
+    fetch(`http://localhost:5000/searyToys/${searchText}`)
     .then((res)=>res.json())
     .then((data)=>{
       setAllToysData(data)
     })
   }
 
+
   return (
       <div className='py-20'>
           <div className='container mx-auto'>
               <div className='text-center mb-10'>
-                <input 
-                    type="search" 
-                    name="search" 
-                    id="search" 
-                    onChange={(e)=>setSearchText(e.target.value)}
-                    className='input input-bordered w-full max-w-md' 
-                    placeholder='Search here...' 
-                />
-                <button onClick={handleSearch} className='py-3 rounded-lg px-5 bg-orange-400 text-white font-semibold text-base ml-2'>Search</button>
+                    <input 
+                        type="search" 
+                        name="search" 
+                        id="search" 
+                        onChange={(e)=>setSearchText(e.target.value)}
+                        className='input input-bordered w-full max-w-md' 
+                        placeholder='Search here...' 
+                    />
+                    <button onClick={handleSearch} className='py-3 rounded-lg px-5 bg-orange-400 text-white font-semibold text-base ml-2'>Search</button>
               </div>
               <div className='grid grid-cols-4 gap-7'>
                   {allToysData.map((allToy)=><AllToy key={allToy._id} allToy={allToy}></AllToy>)}
