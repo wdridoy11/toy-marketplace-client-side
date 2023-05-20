@@ -23,12 +23,12 @@ const router = createBrowserRouter([
         {
           path:"all_toys",
           element:<AllToys></AllToys>,
-          // loader:()=>fetch(`http://localhost:5000/toys`)
+          loader:()=>fetch(`http://localhost:5000/totalToys`)
         },
         {
           path:"toy_details/:id",
           element:<ToyDetails></ToyDetails>,
-          loader:({params})=>fetch(`http://localhost:5000/toyMarketplace/${params.id}`)
+          loader:({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
         },
         {
           path:"my_toys",
@@ -37,7 +37,7 @@ const router = createBrowserRouter([
         {
           path:"toy_update/:id",
           element:<UpdateToy></UpdateToy>,
-          loader:({params})=>fetch(`http://localhost:5000/toyMarketplace/${params.id}`)
+          loader:({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
         },
         {
           path:"add_a_toy",

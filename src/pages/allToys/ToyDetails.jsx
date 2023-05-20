@@ -2,8 +2,10 @@ import React from 'react'
 import { useLoaderData } from 'react-router-dom'
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
+import UserTitle from '../../components/shared/useTitle/UserTitle';
 
 const ToyDetails = () => {
+    UserTitle("Toy Details")
     const toyData = useLoaderData();
     const {toy_name,picture_url,seller_name,email,price,quantity,description,categoryValue,toyRating} = toyData;
   return (

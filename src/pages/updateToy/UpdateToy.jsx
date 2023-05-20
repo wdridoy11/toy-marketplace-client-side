@@ -3,8 +3,10 @@ import { useLoaderData } from 'react-router-dom'
 import Rating from '@mui/material/Rating';
 import Swal from 'sweetalert2';
 import Stack from '@mui/material/Stack';
+import UserTitle from '../../components/shared/useTitle/UserTitle';
 
 const UpdateToy = () => {
+    UserTitle("Update Toy")
     const toyUpdateData = useLoaderData();
     const {_id,toy_name,picture_url,seller_name,email,price,quantity,description} = toyUpdateData;
     // const [categoryValue, setcategoryValue] = useState('');

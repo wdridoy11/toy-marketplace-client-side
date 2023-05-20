@@ -4,6 +4,7 @@ import UserTitle from '../../../components/shared/useTitle/UserTitle'
 import About from '../about/About'
 import Gallery from '../gallery/Gallery'
 import ShopByCategory from '../../shopByCategory/ShopByCategory'
+import Subscribe from '../subscribe/Subscribe'
 
 const Home = () => {
   UserTitle("Home")
@@ -13,6 +14,7 @@ const Home = () => {
       <About></About>
       <Gallery></Gallery>
       <ShopByCategory></ShopByCategory>
+      <Subscribe></Subscribe>
     </div>
   )
 }

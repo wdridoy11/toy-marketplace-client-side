@@ -2,11 +2,13 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
 import { FaUserCircle } from 'react-icons/fa';
 import { AuthContext } from '../../context/AuthProvider';
+import UserTitle from '../../components/shared/useTitle/UserTitle';
 
 const categoryIcon =`https://cdn-icons-png.flaticon.com/512/3502/3502685.png`;
 const quantityIcon =`https://cdn-icons-png.flaticon.com/512/8718/8718777.png`;
 
 const AllToy = ({allToy}) => {
+  UserTitle("All Toy")
   const {user} = useContext(AuthContext)
   const {_id,toy_name, picture_url, seller_name, price, quantity, categoryValue} = allToy;
   

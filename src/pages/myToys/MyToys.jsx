@@ -2,13 +2,15 @@ import React, { useContext, useEffect, useState } from 'react'
 import MyToy from './MyToy';
 import Swal from 'sweetalert2'
 import { AuthContext } from '../../context/AuthProvider';
+import UserTitle from '../../components/shared/useTitle/UserTitle';
 
 const MyToys = () => {
+  UserTitle("My Toy")
   const {user} = useContext(AuthContext);
   const [myToyData,setMyToyData] = useState([]);
 
   useEffect(()=>{
-    fetch(`http://localhost:5000/mytoyMarketplace?email=${user?.email}`)
+    fetch(`http://localhost:5000/myToys?email=${user?.email}`)
     .then((res)=>res.json())
     .then((data)=>{
       setMyToyData(data)
@@ -26,7 +28,7 @@ const MyToys = () => {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/toyMarketplace/${id}`,{
+        fetch(`http://localhost:5000/toys/${id}`,{
           method:"DELETE",
           headers:{
             "content-type":"application/json"

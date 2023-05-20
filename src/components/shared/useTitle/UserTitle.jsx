@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 
 const UserTitle=(title)=>{
     useEffect(()=>{
-        document.title=`PHero | ${title} `
+        document.title=`Educational toy | ${title} `
     })
 }
 

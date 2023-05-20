@@ -3,7 +3,6 @@ import { FaEdit, FaTrash } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 const MyToy = ({toy,handleDeleteToy}) => {
   const {_id,toy_name,picture_url,seller_name,email,price,quantity,description,categoryValue,toyRating} = toy;
-  
   return (
     <>
      <tr>
