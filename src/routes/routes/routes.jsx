@@ -10,6 +10,7 @@ import AddAToy from '../../pages/addAToy/AddAToy';
 import UpdateToy from '../../pages/updateToy/UpdateToy';
 import ToyDetails from '../../pages/allToys/ToyDetails';
 import Error from '../../pages/error/Error';
+import Blogs from '../../pages/blogs/Blogs';
 const router = createBrowserRouter([
     {
       path: "/",
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
         },
         {
           path:"blogs",
-          element:<></>
+          element:<Blogs></Blogs>
         },
         {
           path:"login",
