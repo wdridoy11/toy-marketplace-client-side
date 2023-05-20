@@ -1,8 +1,15 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../../context/AuthProvider';
-import logo from '../../../assets/logo.png'
+import logo from '../../../assets/logo.png';
+import { FaBars } from 'react-icons/fa';
 const Header = () => {
+
+  const [isActive,setActive]=useState("false");
+  const handleToggle=()=>{
+    setActive(!isActive)
+  }
+
   const {user, userLogout} = useContext(AuthContext);
   const handleLogout=()=>{
     userLogout()
@@ -14,14 +21,17 @@ const Header = () => {
         console.log(error.message)
     })
   }
+
   return (
     <div className='bg-transparent py-5'>
         <div className='container mx-auto'>
-            <div className='flex justify-between items-center'>
+            <div className='flex justify-between md:items-center'>
                 <div>
-                  <Link to={'/'}> <img className='w-20' src={logo} alt="" /></Link>
+                  <Link to={'/'}> <img className='w-16 md:w-20' src={logo} alt="" /></Link>
                 </div>
-                <div className='flex gap-6 items-center'>
+                <button className="absolute top-10 right-3 text-2xl cursor-pointer block md:hidden" onClick={handleToggle}><FaBars></FaBars></button>
+                <div className={isActive ? "hidden md:flex gap-7 text-white":"flex flex-col mr-7 md:mr-0 md:flex-row gap-7 mt-16 text-white"}>
+                {/* <div className='flex gap-6 items-center'> */}
                     <Link className='text-base font-medium text-black' to={`/`}>Home</Link>
                     <Link className='text-base font-medium text-black' to={`/all_toys`}>All Toys</Link>
                     {user && <Link className='text-base font-medium text-black' to={`/my_toys`}>My Toys</Link>}
