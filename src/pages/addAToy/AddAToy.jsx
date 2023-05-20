@@ -9,7 +9,7 @@ const AddAToy = () => {
   UserTitle("Add A Toy");
   const {user} = useContext(AuthContext)
   const [categoryValue, setcategoryValue] = useState('');
-  const [toyRating, setToyRating] = useState();
+  const [toyRating, setToyRating] = useState(4);
   // handle Add a toy form data
   const handleAddAToy=(event)=>{
     event.preventDefault();
@@ -24,7 +24,7 @@ const AddAToy = () => {
     const addAToy = {toy_name,picture_url,seller_name,email,price,quantity,description,categoryValue,toyRating};
     
     // toy add send data mongodb
-    fetch(`http://localhost:5000/toys`,{
+    fetch(`https://toy-marketplace-server-developersridoy-gmailcom.vercel.app/toys`,{
       method:"POST",
       headers:{
         "content-type":"application/json"
@@ -115,7 +115,7 @@ const AddAToy = () => {
                         <span className="label-text text-base font-medium">Rating</span>
                     </label>
                     <Stack spacing={1}>
-                        <Rating name="half-rating"  onChange={(event,newValue) => {setToyRating(newValue)}}  defaultValue={4.5} precision={0.5} />
+                        <Rating name="half-rating"  onChange={(event,newValue) => {setToyRating(newValue)}}  defaultValue={4.0} precision={0.5} aria-required/>
                     </Stack>
                 </div>
                 <input type="submit" className='py-3 cursor-pointer px-10 bg-orange-400 text-white font-semibold rounded-md text-base hover:bg-black duration-500' value="Add A Toy" />

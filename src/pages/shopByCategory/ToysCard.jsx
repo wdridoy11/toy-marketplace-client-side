@@ -7,8 +7,8 @@ import { AuthContext } from '../../context/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 
 const ToysCard = ({toy}) => {
+  
   const {_id,toy_name,picture_url, price, toyRating} = toy;
-
   const {user}= useContext(AuthContext);
   const navigate= useNavigate();
 

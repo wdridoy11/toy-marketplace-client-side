@@ -30,7 +30,8 @@ const Blogs = () => {
                     <h3 className='text-lg font-medium mt-3'>Where should we store them on the client-side:</h3>
                     <p className='text-base font-normal text-slate-600'>
                         Access token and refresh token shouldn't be stored in the local/session storage, because they are not a 
-                        place for any sensitive data.
+                        place for any sensitive data. Storing the access token in session storage and sending it via a Bearer 
+                        access_token authorization header to my resource server. Then can we use httpOnly cookies for the refresh token.
                     </p>
                     
                 </div>
