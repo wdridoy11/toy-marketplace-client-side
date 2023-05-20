@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import AllToy from './AllToy'
 import { useLoaderData } from 'react-router-dom';
+// AOS
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+import AllToy from './AllToy'
 
 const AllToys = () => {
+  useEffect(()=>{
+    AOS.init({duration:2000});
+  },[])
 
   const [allToysData,setAllToysData] = useState([]);
   const [searchText, setSearchText] = useState("");
@@ -14,6 +21,7 @@ const AllToys = () => {
   const perPage = Math.ceil(totalToys / itemsPerPage);
   const pageNumber = [...Array(perPage).keys()];
 
+  // item options
   const options =[5,10,15,20];
   const handleSelectedChange=(event)=>{
     setItemsPerPage(parseInt(event.target.value));
@@ -43,18 +51,17 @@ const AllToys = () => {
 
 
   return (
-      <div className='py-20'>
+      <div className='py-20' data-aos="zoom-in">
           <div className='container mx-auto'>
               <div className='text-center mb-10'>
-                    <input 
-                        type="search" 
-                        name="search" 
-                        id="search" 
-                        onChange={(e)=>setSearchText(e.target.value)}
-                        className='input input-bordered w-full max-w-md' 
-                        placeholder='Search here...' 
-                    />
-                    <button onClick={handleSearch} className='py-3 rounded-lg px-5 bg-orange-400 text-white font-semibold text-base ml-2'>Search</button>
+                  <input 
+                      type="search" 
+                      name="search" 
+                      id="search" 
+                      onChange={(e)=>setSearchText(e.target.value)}
+                      className='input input-bordered w-full max-w-md' 
+                      placeholder='Search here...' />
+                  <button onClick={handleSearch} className='py-3 rounded-lg px-5 bg-orange-400 text-white font-semibold text-base ml-2'>Search</button>
               </div>
               <div className='grid grid-cols-4 gap-7'>
                   {allToysData.map((allToy)=><AllToy key={allToy._id} allToy={allToy}></AllToy>)}

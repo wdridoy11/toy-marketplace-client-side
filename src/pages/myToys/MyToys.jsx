@@ -1,6 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
-import MyToy from './MyToy';
 import Swal from 'sweetalert2'
+// AOS
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+import MyToy from './MyToy';
 import { AuthContext } from '../../context/AuthProvider';
 import UserTitle from '../../components/shared/useTitle/UserTitle';
 
@@ -15,6 +19,7 @@ const MyToys = () => {
     .then((data)=>{
       setMyToyData(data)
     })
+    AOS.init({duration:2000});
   },[user])
 
   const handleDeleteToy=(id)=>{
@@ -56,7 +61,7 @@ const MyToys = () => {
  }
   
   return (
-    <div className='py-20'>
+    <div className='py-20' data-aos="zoom-in">
       <div className='container mx-auto'>
         <div>
           <div className='flex justify-end gap-2 mb-5'>
