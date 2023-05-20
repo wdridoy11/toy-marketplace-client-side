@@ -88,7 +88,8 @@ const AddAToy = () => {
                         <option value="Science kits">Science kits</option>
                         <option value="Math learning toys">Math learning toys</option>
                         <option value="Engineering kits">Engineering kits</option>
-                        <option value="Engineering tools">Engineering tools</option>
+                        <option value="Language Toys">Language Toys</option>
+                        <option value="Engineering tools">Engineering toys</option>
                     </select>                    
                 </div>
                 <div className='mb-3'>
