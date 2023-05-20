@@ -54,7 +54,7 @@ const galleryImage=[
             <LightGallery plugins={[lgZoom, lgVideo]} mode="lg-fade">
               {galleryImage.map((gallery, index)=><>
                   <a href={gallery.img} key={index} className='w-full md:w-1/2 p-2 lg:w-1/3'>
-                      <img className='img-responsive w-full h-[320px] rounded-t-lg' src={gallery.img} alt={gallery.title} />
+                      <img className='img-responsive w-full h-[320px] rounded-t-lg object-cover' src={gallery.img} alt={gallery.title} />
                       <h3 className='text-2xl font-semibold -mt-5 text-black block glass p-2'>{gallery.title}</h3>
                   </a>
                </>)}

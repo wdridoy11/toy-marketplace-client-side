@@ -1,12 +1,31 @@
 import React, { useContext } from 'react'
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
+import Swal from 'sweetalert2'
+import "./toyCard.css"
 import { AuthContext } from '../../context/AuthProvider';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const ToysCard = ({toy}) => {
-  const {user}= useContext(AuthContext)
-    const {_id,toy_name,picture_url,seller_name,email,price,quantity,description,categoryValue,toyRating} = toy;
+  const {_id,toy_name,picture_url, price, toyRating} = toy;
+
+  const {user}= useContext(AuthContext);
+  const navigate= useNavigate();
+
+  const handleUserChack =()=>{
+    if(user){
+      navigate(`/toy_details/${_id}`)
+    }else{
+      Swal.fire({
+        title: 'Please Login',
+        text: 'You have to log in first to view details',
+        icon: 'warning',
+        confirmButtonText: 'Close',
+      })
+      navigate(`/login`)
+    }
+  }
+
   return (
     <div>
         <div className='border rounded-md'>
@@ -20,8 +39,8 @@ const ToysCard = ({toy}) => {
                     <Stack spacing={1}>
                         <Rating name="half-rating"  defaultValue={toyRating} precision={0.5} readOnly/>
                     </Stack>({toyRating})
-                    </p>
-                <Link className='inline-block mt-3 py-2 px-5 rounded-md bg-orange-400 text-white font-semibold text-base' to={user ? `/toy_details/${_id}`:`/login`}>View Details</Link>
+                </p>
+                <button onClick={handleUserChack} className='inline-block mt-3 py-2 px-5 rounded-md bg-orange-400 text-white font-semibold text-base'>View Details</button>
             </div>
         </div>
     </div>
