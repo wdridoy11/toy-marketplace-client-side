@@ -1,14 +1,17 @@
 import React, { useContext, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useNavigation} from 'react-router-dom'
 import { AuthContext } from '../../context/AuthProvider';
 import UserTitle from '../../components/shared/useTitle/UserTitle';
 const googleIcon=`https://cdn-icons-png.flaticon.com/512/281/281764.png`;
 const loginImage=`https://img.freepik.com/free-vector/home-screen-concept-illustration_114360-4703.jpg?w=826&t=st=1684343901~exp=1684344501~hmac=5129c44e94ed4c344739c3c7f5818b6421d3e0b2c50ebfa994cce263cabeb266`
 
 const Login = () => {
+
     UserTitle("Login")
+     // It's import from AuthProvider
     const {userLogin, createUserUsingGoogle} = useContext(AuthContext);
     const [error, setError] = useState("");
+    
     const handleLogin=(event)=>{
         event.preventDefault();
         const form = event.target;
@@ -17,7 +20,7 @@ const Login = () => {
         userLogin(email,password)
         .then((result)=>{
             const user = result.user;
-            console.log(user)
+            console.log(user);
         })
         .catch((error)=>{
             setError(error.message)

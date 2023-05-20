@@ -11,6 +11,7 @@ import UpdateToy from '../../pages/updateToy/UpdateToy';
 import ToyDetails from '../../pages/allToys/ToyDetails';
 import Error from '../../pages/error/Error';
 import Blogs from '../../pages/blogs/Blogs';
+import PrivetRoute from '../privetRoute/PrivetRoute';
 const router = createBrowserRouter([
     {
       path: "/",
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
         },
         {
           path:"my_toys",
-          element:<MyToys></MyToys>
+          element:<PrivetRoute><MyToys></MyToys></PrivetRoute>
         },
         {
           path:"toy_update/:id",
@@ -41,7 +42,7 @@ const router = createBrowserRouter([
         },
         {
           path:"add_a_toy",
-          element:<AddAToy></AddAToy>
+          element:<PrivetRoute><AddAToy></AddAToy></PrivetRoute>
         },
         {
           path:"blogs",
