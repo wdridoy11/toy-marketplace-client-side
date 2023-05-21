@@ -11,6 +11,7 @@ import {
     signInWithEmailAndPassword,
 } from "firebase/auth";
 import app from '../utils/firebase/firebase.config';
+import { useNavigate } from 'react-router-dom';
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({children}) => {
@@ -24,7 +25,6 @@ const AuthProvider = ({children}) => {
         signInWithPopup(auth, googleProvider)
         .then((result)=>{
             const user = result.user;
-            console.log(user)
         })
         .catch((error)=>{
             console.log(error.message)

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Link, Navigate, useNavigation} from 'react-router-dom'
+import { Link, useLocation, useNavigate} from 'react-router-dom'
 import { AuthContext } from '../../context/AuthProvider';
 import UserTitle from '../../components/shared/useTitle/UserTitle';
 const googleIcon=`https://cdn-icons-png.flaticon.com/512/281/281764.png`;
@@ -11,6 +11,9 @@ const Login = () => {
      // It's import from AuthProvider
     const {userLogin, createUserUsingGoogle} = useContext(AuthContext);
     const [error, setError] = useState("");
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location)
     
     const handleLogin=(event)=>{
         event.preventDefault();
@@ -20,7 +23,7 @@ const Login = () => {
         userLogin(email,password)
         .then((result)=>{
             const user = result.user;
-            console.log(user);
+            navigate('/');
         })
         .catch((error)=>{
             setError(error.message)

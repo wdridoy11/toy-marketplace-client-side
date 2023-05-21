@@ -31,6 +31,8 @@ const AllToys = () => {
   // get data and pagination data
   useEffect(()=>{
    async function fetchData(){
+      // fetch(`http://localhost:5000/toys?page=${currentPage}&limit=${itemsPerPage}`)
+      // fetch(`http://localhost:5000//toys?page=${currentPage}&limit=${itemsPerPage}`)
       fetch(`https://toy-marketplace-server-developersridoy-gmailcom.vercel.app/toys?page=${currentPage}&limit=${itemsPerPage}`)
       .then((res)=>res.json())
       .then((data)=>{

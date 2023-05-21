@@ -11,7 +11,8 @@ const ToysCard = ({toy}) => {
   const {_id,toy_name,picture_url, price, toyRating} = toy;
   const {user}= useContext(AuthContext);
   const navigate= useNavigate();
-const location = useLocation();
+  const location = useLocation();
+  console.log(location)
   const handleUserChack =()=>{
     if(user){
       navigate(`/toy_details/${_id}`)
@@ -22,7 +23,7 @@ const location = useLocation();
         icon: 'warning',
         confirmButtonText: 'Close',
       })
-      navigate(`/login`)
+      // navigate(`/login`)
     }
   }
 

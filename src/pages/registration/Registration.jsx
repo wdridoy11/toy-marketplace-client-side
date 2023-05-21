@@ -1,14 +1,16 @@
 import React, { useContext, useState} from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthProvider';
 import UserTitle from '../../components/shared/useTitle/UserTitle';
 const googleIcon=`https://cdn-icons-png.flaticon.com/512/281/281764.png`;
 const registrationImage=`https://img.freepik.com/free-vector/home-screen-concept-illustration_114360-4703.jpg?w=826&t=st=1684343901~exp=1684344501~hmac=5129c44e94ed4c344739c3c7f5818b6421d3e0b2c50ebfa994cce263cabeb266`
 
 const Registration = () => {
+  
   UserTitle("Registration")
   const {createUserUsingGoogle, createUserUsingEmail, updateUserProfile} = useContext(AuthContext)
   const [error, setError] = useState("");
+  const navigate = useNavigate();
   const handleRegistration=(event)=>{
     event.preventDefault();
     const form = event.target;
@@ -16,7 +18,8 @@ const Registration = () => {
     const email = form.email.value;
     const password = form.password.value;
     const photoUrl = form.photoUrl.value;
-    setError("")
+    setError("");
+
     if(password.length<6){
       setError("Password must be 6 character")
     }
@@ -26,6 +29,7 @@ const Registration = () => {
       const user = result.user;
       updateUserProfile(user,name,photoUrl)
       form.reset();
+      navigate('/')
     })
     .catch((error)=>{
       setError(error.message)

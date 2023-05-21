@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLoaderData } from 'react-router-dom'
+import { useLoaderData} from 'react-router-dom'
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
 import UserTitle from '../../components/shared/useTitle/UserTitle';
