@@ -4,14 +4,14 @@ import Stack from '@mui/material/Stack';
 import Swal from 'sweetalert2'
 import "./toyCard.css"
 import { AuthContext } from '../../context/AuthProvider';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const ToysCard = ({toy}) => {
   
   const {_id,toy_name,picture_url, price, toyRating} = toy;
   const {user}= useContext(AuthContext);
   const navigate= useNavigate();
-
+const location = useLocation();
   const handleUserChack =()=>{
     if(user){
       navigate(`/toy_details/${_id}`)
