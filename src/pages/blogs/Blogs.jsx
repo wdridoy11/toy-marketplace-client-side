@@ -2,7 +2,7 @@ import React from 'react'
 import UserTitle from '../../components/shared/useTitle/UserTitle'
 
 const Blogs = () => {
-    UserTitle("Blogs")
+    UserTitle("Blogs");
   return (
     <div className='py-20'>
         <div className='container mx-auto px-5'>

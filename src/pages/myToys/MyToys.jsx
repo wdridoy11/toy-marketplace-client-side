@@ -12,7 +12,7 @@ const MyToys = () => {
   UserTitle("My Toy")
   const {user} = useContext(AuthContext);
   const [myToyData,setMyToyData] = useState([]);
-
+  //  only my toys get
   useEffect(()=>{
     fetch(`https://toy-marketplace-server-developersridoy-gmailcom.vercel.app/myToys?email=${user?.email}`)
     .then((res)=>res.json())
@@ -22,6 +22,7 @@ const MyToys = () => {
     AOS.init({duration:2000});
   },[user])
 
+  // handle delete toys
   const handleDeleteToy=(id)=>{
     Swal.fire({
       title: 'Are you sure?',

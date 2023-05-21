@@ -5,9 +5,12 @@ import Stack from '@mui/material/Stack';
 import UserTitle from '../../components/shared/useTitle/UserTitle';
 
 const ToyDetails = () => {
-    UserTitle("Toy Details")
+
+    UserTitle("Toy Details");
+    // data get from routes
     const toyData = useLoaderData();
     const {toy_name,picture_url,seller_name,email,price,quantity,description,categoryValue,toyRating} = toyData;
+
   return (
     <div className='py-20'>
         <div className='container mx-auto'>

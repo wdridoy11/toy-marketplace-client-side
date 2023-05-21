@@ -18,6 +18,7 @@ useEffect(()=>{
   return (
     <div className='py-20'>
         <div className='container mx-auto'>
+          <h1 className='text-5xl font-semibold text-center mb-10'>Shop by category</h1>
             <Tabs>
               <TabList>
                 <Tab onClick={(e)=>setCategorysText(e.target.innerText)}>Math learning toys</Tab>

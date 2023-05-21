@@ -10,11 +10,13 @@ const Login = () => {
     UserTitle("Login")
      // It's import from AuthProvider
     const {userLogin, createUserUsingGoogle} = useContext(AuthContext);
+    
     const [error, setError] = useState("");
     const navigate = useNavigate();
     const location = useLocation();
-    console.log(location)
-    
+    const from = location.state?.from?.pathname || "/";
+
+    // user login handle
     const handleLogin=(event)=>{
         event.preventDefault();
         const form = event.target;
@@ -23,7 +25,8 @@ const Login = () => {
         userLogin(email,password)
         .then((result)=>{
             const user = result.user;
-            navigate('/');
+            console.log(user)
+            navigate(from, {replace:true});
         })
         .catch((error)=>{
             setError(error.message)
@@ -42,8 +45,8 @@ const Login = () => {
                         <h3 className='text-4xl text-center mb-10 font-bold'>Login</h3>
                         {error && <p className='text-red-600 text-center mb-2'>{error}</p>}
                         <form onSubmit={handleLogin}>
-                            <input className='w-full border-b border-[#ddd] mb-5 pb-3 text-base outline-none' type="email" name="email" id="email" placeholder='Enter your email' required/>
-                            <input className='w-full border-b border-[#ddd] mb-5 pb-3 text-base outline-none' type="password" name="password" id="password" placeholder='Enter your password' required/>
+                            <input className='w-full border border-[#ddd] mb-5 py-3 px-5 rounded-full text-base outline-none' type="email" name="email" id="email" placeholder='Enter your email' required/>
+                            <input className='w-full border border-[#ddd] mb-5 py-3 px-5 rounded-full text-base outline-none' type="password" name="password" id="password" placeholder='Enter your password' required/>
                             <div className='flex justify-between'>
                                 <div className='flex items-center gap-2'>
                                     <input className='checkbox' type="checkbox" name="checkbox" id="checkbox"  value="Remember Me"/>
@@ -51,7 +54,7 @@ const Login = () => {
                                 </div>
                                 <Link className='text-orange-400 text-base font-medium'>Forgot Password</Link>
                             </div>
-                            <button className='btn text-white bg-orange-400 w-full border-0 rounded-none mt-10 mb-4 '>Login</button>
+                            <button className='btn text-white bg-orange-400 w-full rounded-lg border-0 mt-10 mb-4 '>Login</button>
                             <p className='text-center text-base font-medium'>Don't have an account? <Link to={`/registration`} className='text-orange-400'>Create an account</Link></p>
                         </form>
                         <div className='md:w-1/2 mx-auto mt-6'>

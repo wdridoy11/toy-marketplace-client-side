@@ -9,7 +9,8 @@ const Header = () => {
   const handleToggle=()=>{
     setActive(!isActive)
   }
-
+  
+  // user login using firebase
   const {user, userLogout} = useContext(AuthContext);
   const handleLogout=()=>{
     userLogout()

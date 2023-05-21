@@ -7,6 +7,7 @@ import 'aos/dist/aos.css';
 import AllToy from './AllToy'
 
 const AllToys = () => {
+
   useEffect(()=>{
     AOS.init({duration:2000});
   },[])
@@ -31,8 +32,6 @@ const AllToys = () => {
   // get data and pagination data
   useEffect(()=>{
    async function fetchData(){
-      // fetch(`http://localhost:5000/toys?page=${currentPage}&limit=${itemsPerPage}`)
-      // fetch(`http://localhost:5000//toys?page=${currentPage}&limit=${itemsPerPage}`)
       fetch(`https://toy-marketplace-server-developersridoy-gmailcom.vercel.app/toys?page=${currentPage}&limit=${itemsPerPage}`)
       .then((res)=>res.json())
       .then((data)=>{
@@ -50,7 +49,6 @@ const AllToys = () => {
       setAllToysData(data)
     })
   }
-
 
   return (
       <div className='py-20' data-aos="zoom-in">

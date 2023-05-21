@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { Link } from 'react-router-dom'
-import aboutImage from '../../../assets/about.png'
-import aboutImage2 from '../../../assets/about-02.png'
+import aboutImage from '../../../assets/about.png';
+import aboutImage2 from '../../../assets/about-02.png';
 
 const About = () => {
   return (

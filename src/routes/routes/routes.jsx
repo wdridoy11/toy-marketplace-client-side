@@ -1,5 +1,6 @@
 import React from 'react'
 import {createBrowserRouter} from "react-router-dom";
+// import pages
 import Main from '../../layout/Main';
 import Home from '../../pages/home/home/Home';
 import Login from '../../pages/login/Login';
@@ -12,6 +13,7 @@ import ToyDetails from '../../pages/allToys/ToyDetails';
 import Error from '../../pages/error/Error';
 import Blogs from '../../pages/blogs/Blogs';
 import PrivetRoute from '../privetRoute/PrivetRoute';
+
 const router = createBrowserRouter([
     {
       path: "/",

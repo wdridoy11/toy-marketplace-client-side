@@ -8,9 +8,12 @@ const registrationImage=`https://img.freepik.com/free-vector/home-screen-concept
 const Registration = () => {
   
   UserTitle("Registration")
+   // It's import from AuthProvider
   const {createUserUsingGoogle, createUserUsingEmail, updateUserProfile} = useContext(AuthContext)
   const [error, setError] = useState("");
   const navigate = useNavigate();
+
+  // user Registration handle
   const handleRegistration=(event)=>{
     event.preventDefault();
     const form = event.target;
@@ -23,7 +26,7 @@ const Registration = () => {
     if(password.length<6){
       setError("Password must be 6 character")
     }
-
+  // create user using google
     createUserUsingEmail(email,password)
     .then((result)=>{
       const user = result.user;
@@ -48,11 +51,11 @@ const Registration = () => {
                         <h3 className='text-4xl text-center mb-10 font-bold'>Registration</h3>
                         {error && <p className='text-red-600 text-center mb-2'>{error}</p>}
                         <form onSubmit={handleRegistration}>
-                            <input className='w-full border-b border-[#ddd] mb-5 pb-3 text-base outline-none' type="text" name="name" id="name" placeholder='Enter your name' required/>
-                            <input className='w-full border-b border-[#ddd] mb-5 pb-3 text-base outline-none' type="email" name="email" id="email" placeholder='Enter your email' required/>
-                            <input className='w-full border-b border-[#ddd] mb-5 pb-3 text-base outline-none' type="password" name="password" id="password" placeholder='Enter your password' required/>
-                            <input className='w-full border-b border-[#ddd] mb-5 pb-3 text-base outline-none' type="text" name="photoUrl" id="photoUrl" placeholder='Photo URL' required/>
-                            <button className='btn text-white bg-orange-400 w-full border-0 rounded-none mt-10 mb-4 '>Registration</button>
+                            <input className='w-full border border-[#ddd] mb-5 py-3 px-5 rounded-full text-base outline-none' type="text" name="name" id="name" placeholder='Enter your name' required/>
+                            <input className='w-full border border-[#ddd] mb-5 py-3 px-5 rounded-full text-base outline-none' type="email" name="email" id="email" placeholder='Enter your email' required/>
+                            <input className='w-full border border-[#ddd] mb-5 py-3 px-5 rounded-full text-base outline-none' type="password" name="password" id="password" placeholder='Enter your password' required/>
+                            <input className='w-full border border-[#ddd] mb-5 py-3 px-5 rounded-full text-base outline-none' type="text" name="photoUrl" id="photoUrl" placeholder='Photo URL' required/>
+                            <button className='btn text-white bg-orange-400 w-full border-0 mt-10 mb-4 rounded-lg'>Registration</button>
                             <p className='text-center text-base font-medium'>Already have an account? <Link to={`/login`} className='text-orange-400'>Login</Link></p>
                         </form>
                         <div className='md:w-1/2 mx-auto mt-6'>

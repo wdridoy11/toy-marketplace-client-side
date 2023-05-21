@@ -9,6 +9,7 @@ const UpdateToy = () => {
     const toyUpdateData = useLoaderData();
     const {_id,price,quantity,description} = toyUpdateData;
 
+    // handle updatae data
     const handleUpdateData = (event)=>{
         event.preventDefault();
         const form = event.target;
@@ -17,6 +18,7 @@ const UpdateToy = () => {
         const description = form.description.value;
         const updateToy = {price,quantity,description};
         
+        // update handle api
         fetch(`https://toy-marketplace-server-developersridoy-gmailcom.vercel.app/toys/${_id}`,{
             method:"PUT",
             headers:{

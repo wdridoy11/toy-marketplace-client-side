@@ -1,8 +1,9 @@
 import React from 'react'
-import "./gallery.css"
+// lightgallery
 import LightGallery from 'lightgallery/react';
 import lgZoom from 'lightgallery/plugins/zoom';
 import lgVideo from 'lightgallery/plugins/video';
+import "./gallery.css"
 
 
 const Gallery = () => {

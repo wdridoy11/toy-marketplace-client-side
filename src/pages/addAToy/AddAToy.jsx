@@ -6,6 +6,7 @@ import { AuthContext } from '../../context/AuthProvider';
 import UserTitle from '../../components/shared/useTitle/UserTitle';
 
 const AddAToy = () => {
+
   UserTitle("Add A Toy");
   const {user} = useContext(AuthContext)
   const [categoryValue, setcategoryValue] = useState('');
@@ -41,10 +42,12 @@ const AddAToy = () => {
           icon: 'success',
           confirmButtonText: 'Close'
         })
+        form.reset();
       }
     })
   };
-  // Select value get
+
+  // Select category value get
   const handleCategory = (event) => {
     setcategoryValue(event.target.value);
   };

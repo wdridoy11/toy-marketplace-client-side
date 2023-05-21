@@ -11,10 +11,10 @@ import {
     signInWithEmailAndPassword,
 } from "firebase/auth";
 import app from '../utils/firebase/firebase.config';
-import { useNavigate } from 'react-router-dom';
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({children}) => {
+    
     const [user,setUser] = useState();
     const [loading,setLoading] = useState(true);
     const auth = getAuth(app);
@@ -25,6 +25,7 @@ const AuthProvider = ({children}) => {
         signInWithPopup(auth, googleProvider)
         .then((result)=>{
             const user = result.user;
+            console.log(user)
         })
         .catch((error)=>{
             console.log(error.message)
@@ -33,6 +34,7 @@ const AuthProvider = ({children}) => {
 
     //create user using email and password 
     const createUserUsingEmail=(email,password)=>{
+        setLoading(true)
         return createUserWithEmailAndPassword(auth,email,password)
     }
 

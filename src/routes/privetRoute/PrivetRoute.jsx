@@ -6,9 +6,7 @@ const PrivetRoute = ({children}) => {
 
     const {user, loading} = useContext(AuthContext);
     const location = useLocation(); 
-    console.log(location)
     
-
     if(loading){
       return (
         <div className='text-center py-5'>
@@ -18,12 +16,11 @@ const PrivetRoute = ({children}) => {
         </div>
       )
     }
-
     if(user){
       return children
     }
 
-  return <Navigate to={'/login'} replace={true}></Navigate>
+  return <Navigate to='/login' state={{from : location}} replace={true}></Navigate>
 }
 
 export default PrivetRoute

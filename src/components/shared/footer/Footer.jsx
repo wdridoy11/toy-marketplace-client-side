@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
-import logo from '../../../assets/logo.png'
 import { AuthContext } from '../../../context/AuthProvider';
+import logo from '../../../assets/logo.png';
 
 const Footer = () => {
 
