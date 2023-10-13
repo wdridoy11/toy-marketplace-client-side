@@ -12,6 +12,7 @@ import ShopByCategory from '../../shopByCategory/ShopByCategory'
 import Subscribe from '../subscribe/Subscribe'
 import Blogs from '../../blogs/Blogs';
 import AllProducts from '../../allProduct/AllProducts';
+import Testimonial from '../../testimonial/Testimonial';
 
 const Home = () => {
   UserTitle("Home")
@@ -25,6 +26,7 @@ const Home = () => {
       <AllProducts></AllProducts>
       <div data-aos="zoom-in"><Gallery></Gallery></div>
       <div data-aos="fade-down"><ShopByCategory></ShopByCategory></div>
+      <Testimonial></Testimonial>
       <div><Blogs></Blogs></div>
       <div data-aos="flip-up"><Subscribe></Subscribe></div>
     </div>
