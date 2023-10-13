@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import AllProduct from './AllProduct';
 import AllToy from '../allToys/AllToy';
 
 const AllProducts = () => {
