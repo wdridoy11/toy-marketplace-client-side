@@ -13,6 +13,7 @@ import ToyDetails from '../../pages/allToys/ToyDetails';
 import Error from '../../pages/error/Error';
 import Blogs from '../../pages/blogs/Blogs';
 import PrivetRoute from '../privetRoute/PrivetRoute';
+import BlogDetails from '../../pages/blogs/BlogDetails';
 
 const router = createBrowserRouter([
     {
@@ -49,6 +50,11 @@ const router = createBrowserRouter([
         {
           path:"blogs",
           element:<Blogs></Blogs>
+        },
+        {
+          path:"blogs/:id",
+          element:<BlogDetails></BlogDetails>,
+          loader:({params})=>fetch(`http://localhost:5000/blogs/${params.id}`)
         },
         {
           path:"login",
