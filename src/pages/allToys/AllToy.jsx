@@ -19,7 +19,7 @@ const AllToy = ({allToy}) => {
               <img className='w-full object-cover' src={picture_url} alt="toy_photo" />
           </div>
             <div className='p-5'>
-                <h3 className='text-xl font-semibold text-black mb-3'>{toy_name}</h3>
+                <h3 className='text-xl font-semibold text-black mb-3'>{toy_name.length>30? `${toy_name.slice(0,30)}...`:toy_name}</h3>
                 <p className='text-base font-medium text-orange-400 mb-1'>$: {price}</p>
                 <p className='text-base font-medium text-black mb-2 flex items-center gap-2'>
                     <img className='w-5 h-5' src={quantityIcon} alt="quantity_icon" />({quantity})

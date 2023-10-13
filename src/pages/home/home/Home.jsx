@@ -11,6 +11,7 @@ import Gallery from '../gallery/Gallery'
 import ShopByCategory from '../../shopByCategory/ShopByCategory'
 import Subscribe from '../subscribe/Subscribe'
 import Blogs from '../../blogs/Blogs';
+import AllProducts from '../../allProduct/AllProducts';
 
 const Home = () => {
   UserTitle("Home")
@@ -21,6 +22,7 @@ const Home = () => {
     <div>
       <div data-aos="flip-left"><Hero></Hero></div>
       <div data-aos="fade-right"><About></About></div>
+      <AllProducts></AllProducts>
       <div data-aos="zoom-in"><Gallery></Gallery></div>
       <div data-aos="fade-down"><ShopByCategory></ShopByCategory></div>
       <div><Blogs></Blogs></div>
