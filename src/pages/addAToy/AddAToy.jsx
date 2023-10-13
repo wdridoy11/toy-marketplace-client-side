@@ -25,7 +25,7 @@ const AddAToy = () => {
     const addAToy = {toy_name,picture_url,seller_name,email,price,quantity,description,categoryValue,toyRating};
     
     // toy add send data mongodb
-    fetch(`https://toy-marketplace-server-developersridoy-gmailcom.vercel.app/toys`,{
+    fetch(`http://localhost:5000/toys`,{
       method:"POST",
       headers:{
         "content-type":"application/json"
