@@ -7,10 +7,10 @@ const registrationImage=`https://img.freepik.com/free-vector/home-screen-concept
 
 const Registration = () => {
   
+  const [error, setError] = useState("");
   UserTitle("Registration")
    // It's import from AuthProvider
   const {createUserUsingGoogle, createUserUsingEmail, updateUserProfile} = useContext(AuthContext)
-  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   // user Registration handle

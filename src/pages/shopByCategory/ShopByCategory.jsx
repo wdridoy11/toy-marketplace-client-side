@@ -11,8 +11,8 @@ const ShopByCategory = () => {
 useEffect(()=>{
   fetch(`https://toy-marketplace-server-nb0ccenf3-developersridoy-gmailcom.vercel.app/categorys/${categorysText}`)
   .then((res)=>res.json())
-  .then((data)=>setToysData(data));
-
+  .then((data)=>setToysData(data))
+  .catch((err)=>console.log(err.message))
 },[categorysText])
 
   return (

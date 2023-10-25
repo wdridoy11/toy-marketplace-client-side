@@ -5,9 +5,7 @@ import { AuthContext } from '../../../context/AuthProvider';
 import logo from '../../../assets/logo.png';
 
 const Footer = () => {
-
-    const {user} = useContext(AuthContext);
-
+  const {user} = useContext(AuthContext);
   return (
     <footer>
         <div className="py-14 bg-base-200 text-base-content">

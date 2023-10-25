@@ -46,7 +46,7 @@ const galleryImage=[
   },
 ]
   return (
-    <div className='py-20 bg-[#F5F5F5]'>
+    <div className='pb-20'>
         <div className='container mx-auto'>
             <div>
                 <h1 className='text-5xl font-semibold text-center mb-10'>Gallery</h1>

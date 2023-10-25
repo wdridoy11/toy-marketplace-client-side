@@ -4,7 +4,7 @@ import errorImage from '../../assets/error.jpg'
 import UserTitle from '../../components/shared/useTitle/UserTitle'
 
 const Error = () => {
-  UserTitle("Error")
+  UserTitle("Error");
   return (
     <div className='py-20'>
         <div className='container mx-auto'>

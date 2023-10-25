@@ -3,16 +3,15 @@ import UserTitle from '../../components/shared/useTitle/UserTitle'
 import Blog from './Blog';
 
 const Blogs = () => {
-    UserTitle("Blogs");
 
-    const [blogs, setBlogs] = useState();
-    useEffect(()=>{
-        fetch("https://toy-marketplace-server-nb0ccenf3-developersridoy-gmailcom.vercel.app/blogs")
-        .then((res)=>res.json())
-        .then((data)=>setBlogs(data))
-        .catch((err)=>console.log(err.message))
-    },[])
-
+  UserTitle("Blogs");
+  const [blogs, setBlogs] = useState();
+  useEffect(()=>{
+      fetch("https://toy-marketplace-server-nb0ccenf3-developersridoy-gmailcom.vercel.app/blogs")
+      .then((res)=>res.json())
+      .then((data)=>setBlogs(data))
+      .catch((err)=>console.log(err.message))
+  },[])
 
   return (
     <div className='pb-20 pt-10'>

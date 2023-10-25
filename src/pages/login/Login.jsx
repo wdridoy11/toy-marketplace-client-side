@@ -7,11 +7,10 @@ const loginImage=`https://img.freepik.com/free-vector/home-screen-concept-illust
 
 const Login = () => {
 
-    UserTitle("Login")
-     // It's import from AuthProvider
-    const {userLogin, createUserUsingGoogle} = useContext(AuthContext);
-    
     const [error, setError] = useState("");
+    const {userLogin, createUserUsingGoogle} = useContext(AuthContext);
+    UserTitle("Login")
+    
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";

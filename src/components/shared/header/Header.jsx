@@ -6,12 +6,13 @@ import { FaBars } from 'react-icons/fa';
 const Header = () => {
 
   const [isActive,setActive]=useState("false");
+  const {user, userLogout} = useContext(AuthContext);
+  
   const handleToggle=()=>{
     setActive(!isActive)
   }
   
   // user login using firebase
-  const {user, userLogout} = useContext(AuthContext);
   const handleLogout=()=>{
     userLogout()
     .then((result)=>{

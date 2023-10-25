@@ -9,13 +9,14 @@ import { AuthContext } from '../../context/AuthProvider';
 import UserTitle from '../../components/shared/useTitle/UserTitle';
 
 const MyToys = () => {
+
+  const [myToyData,setMyToyData] = useState([]);
   UserTitle("My Toy")
   const {user} = useContext(AuthContext);
-  const [myToyData,setMyToyData] = useState([]);
+  
   //  only my toys get
   useEffect(()=>{
     fetch(`https://toy-marketplace-server-nb0ccenf3-developersridoy-gmailcom.vercel.app/myToys?email=${user?.email}`)
-    // fetch(`http://localhost:5000/myToys?email=${user?.email}`)
     .then((res)=>res.json())
     .then((data)=>{
       setMyToyData(data)
@@ -36,7 +37,6 @@ const MyToys = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(`https://toy-marketplace-server-nb0ccenf3-developersridoy-gmailcom.vercel.app/toys/${id}`,{
-        // fetch(`http://localhost:5000/toys/${id}`,{
           method:"DELETE",
           headers:{
             "content-type":"application/json"

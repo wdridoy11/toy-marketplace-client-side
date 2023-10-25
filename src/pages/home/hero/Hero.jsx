@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 import heroImage1 from '../../../assets/hero-01.jpg'
 
 const Hero = () => {
@@ -15,7 +15,7 @@ const Hero = () => {
               components, materials, and instructions that allow users to build and experiment with various 
               engineering concepts and principles.
           </p>
-          <button className='py-3 px-10 bg-orange-400 text-white font-semibold text-base rounded-lg'>Get Started</button>
+          <Link to={'/all_toys'} className='py-3 px-10 bg-orange-400 hover:bg-white hover:text-black duration-500 text-white font-semibold text-base rounded-lg'>Get Started</Link>
         </div>
       </div>
     </div>

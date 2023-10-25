@@ -2,18 +2,18 @@ import React from 'react'
 import {createBrowserRouter} from "react-router-dom";
 // import pages
 import Main from '../../layout/Main';
-import Home from '../../pages/home/home/Home';
+import Blogs from '../../pages/blogs/Blogs';
 import Login from '../../pages/login/Login';
-import Registration from '../../pages/registration/Registration';
-import AllToys from '../../pages/allToys/AllToys';
+import Error from '../../pages/error/Error';
+import Home from '../../pages/home/home/Home';
 import MyToys from '../../pages/myToys/MyToys';
+import AllToys from '../../pages/allToys/AllToys';
 import AddAToy from '../../pages/addAToy/AddAToy';
+import PrivetRoute from '../privetRoute/PrivetRoute';
 import UpdateToy from '../../pages/updateToy/UpdateToy';
 import ToyDetails from '../../pages/allToys/ToyDetails';
-import Error from '../../pages/error/Error';
-import Blogs from '../../pages/blogs/Blogs';
-import PrivetRoute from '../privetRoute/PrivetRoute';
 import BlogDetails from '../../pages/blogs/BlogDetails';
+import Registration from '../../pages/registration/Registration';
 
 const router = createBrowserRouter([
     {

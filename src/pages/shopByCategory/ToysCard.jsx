@@ -40,7 +40,7 @@ const ToysCard = ({toy}) => {
                         <Rating name="half-rating"  defaultValue={toyRating} precision={0.5} readOnly/>
                     </Stack>({toyRating})
                 </p>
-                <button onClick={handleUserChack} className='inline-block mt-3 py-2 px-5 rounded-md bg-orange-400 text-white font-semibold text-base'>View Details</button>
+                <button onClick={handleUserChack} className='inline-block mt-3 py-2 px-5 rounded-md bg-orange-400 hover:bg-black duration-500 text-white font-semibold text-base'>View Details</button>
             </div>
         </div>
     </div>

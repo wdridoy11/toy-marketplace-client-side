@@ -8,17 +8,18 @@ import AllToy from './AllToy'
 
 const AllToys = () => {
 
+  const [allToysData,setAllToysData] = useState([]);
+  const [searchText, setSearchText] = useState("");
+  const [currentPage,setCurrentPage] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(20);
+
+  // Aos css animation
   useEffect(()=>{
     AOS.init({duration:2000});
   },[])
 
-  const [allToysData,setAllToysData] = useState([]);
-  const [searchText, setSearchText] = useState("");
-
   // toys pagination system
   const {totalToys} = useLoaderData();
-  const [currentPage,setCurrentPage] = useState(0);
-  const [itemsPerPage, setItemsPerPage] = useState(20);
   const perPage = Math.ceil(totalToys / itemsPerPage);
   const pageNumber = [...Array(perPage).keys()];
 

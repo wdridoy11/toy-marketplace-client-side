@@ -7,10 +7,11 @@ import UserTitle from '../../components/shared/useTitle/UserTitle';
 
 const AddAToy = () => {
 
-  UserTitle("Add A Toy");
-  const {user} = useContext(AuthContext)
   const [categoryValue, setcategoryValue] = useState('');
   const [toyRating, setToyRating] = useState(4);
+  const {user} = useContext(AuthContext);
+  UserTitle("Add A Toy");
+  
   // handle Add a toy form data
   const handleAddAToy=(event)=>{
     event.preventDefault();
