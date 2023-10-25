@@ -16,7 +16,7 @@ const AllToy = ({allToy}) => {
     <div>
         <div className='border rounded-md'>
           <div className='h-[300px] overflow-hidden'>
-              <img className='w-full object-cover' src={picture_url} alt="toy_photo" />
+              <img className='w-full object-cover hover:scale-110 duration-500' src={picture_url} alt="toy_photo" />
           </div>
             <div className='p-5'>
                 <h3 className='text-xl font-semibold text-black mb-3'>{toy_name.length>30? `${toy_name.slice(0,30)}...`:toy_name}</h3>
@@ -32,7 +32,7 @@ const AllToy = ({allToy}) => {
                       <img className='w-4 h-4' src={categoryIcon} alt="category_Icon" />{categoryValue}
                   </p>
                 </div>
-                <Link className='inline-block mt-3 py-2 px-5 rounded-md bg-orange-400 text-white font-semibold text-base' to={user ? `/toy_details/${_id}`:`/login`}>View Details</Link>
+                <Link className='inline-block mt-3 py-2 px-5 rounded-md bg-orange-400 hover:bg-black duration-500 text-white font-semibold text-base' to={user ? `/toy_details/${_id}`:`/login`}>View Details</Link>
             </div>
         </div>
     </div>

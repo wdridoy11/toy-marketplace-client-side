@@ -5,13 +5,12 @@ const AllProducts = () => {
 
   const [allProducts, setAllProducts] = useState();
   useEffect(()=>{
-      fetch("http://localhost:5000/toys")
+      fetch("https://toy-marketplace-server-nb0ccenf3-developersridoy-gmailcom.vercel.app/toys")
       .then((res)=>res.json())
       .then((data)=>setAllProducts(data))
       .catch((err)=>console.log(err.message))
   },[])
 
-console.log(allProducts)
   return (
     <div className='py-20'>
       <div className='container mx-auto'>

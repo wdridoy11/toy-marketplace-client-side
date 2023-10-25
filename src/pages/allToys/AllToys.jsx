@@ -32,7 +32,7 @@ const AllToys = () => {
   // get data and pagination data
   useEffect(()=>{
    async function fetchData(){
-      fetch(`http://localhost:5000/toys?page=${currentPage}&limit=${itemsPerPage}`)
+      fetch(`https://toy-marketplace-server-nb0ccenf3-developersridoy-gmailcom.vercel.app/toys?page=${currentPage}&limit=${itemsPerPage}`)
       .then((res)=>res.json())
       .then((data)=>{
         setAllToysData(data)
@@ -43,7 +43,7 @@ const AllToys = () => {
 
    // all toys search data
   const handleSearch=()=>{
-    fetch(`http://localhost:5000/searyToys/${searchText}`)
+    fetch(`https://toy-marketplace-server-nb0ccenf3-developersridoy-gmailcom.vercel.app/searyToys/${searchText}`)
     .then((res)=>res.json())
     .then((data)=>{
       setAllToysData(data)

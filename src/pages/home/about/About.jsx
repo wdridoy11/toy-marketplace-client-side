@@ -1,14 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import aboutImage from '../../../assets/about.png';
-import aboutImage2 from '../../../assets/about-02.png';
+import aboutImage from '../../../assets/about-02.png';
+import aboutImage2 from '../../../assets/about2.png.webp';
 
 const About = () => {
   return (
     <div className='py-20'>
         <div className='container mx-auto'>
-            <div className='grid lg:grid-cols-2 gap-10'>
+            <div className='grid lg:grid-cols-2 gap-7'>
                 <div className='grid lg:grid-cols-2 gap-5'>
                     <img className='w-full h-[350px] object-bottom object-cover border rounded-lg' src={aboutImage} alt="About img" />
                     <img className='w-full h-[350px] object-cover border mt-5 lg:mt-16 rounded-lg' src={aboutImage2} alt="About img" />

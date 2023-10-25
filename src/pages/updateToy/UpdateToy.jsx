@@ -19,7 +19,7 @@ const UpdateToy = () => {
         const updateToy = {price,quantity,description};
         
         // update handle api
-        fetch(`http://localhost:5000/toys/${_id}`,{
+        fetch(`https://toy-marketplace-server-nb0ccenf3-developersridoy-gmailcom.vercel.app/toys/${_id}`,{
             method:"PUT",
             headers:{
                 "content-type":"application/json"

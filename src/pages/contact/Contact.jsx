@@ -20,7 +20,7 @@ const Contact = () => {
 
 
   return (
-    <div className='py-20'>
+    <div className='py-20 bg-[#F8F8F8]'>
         <div className='container mx-auto'>
             <h1 className='text-5xl font-semibold text-center mb-10'>Contact Us</h1>
             <div className='grid grid-cols-2 items-center gap-5'>

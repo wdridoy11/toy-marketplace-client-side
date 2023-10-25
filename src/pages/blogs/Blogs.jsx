@@ -7,7 +7,7 @@ const Blogs = () => {
 
     const [blogs, setBlogs] = useState();
     useEffect(()=>{
-        fetch("http://localhost:5000/blogs")
+        fetch("https://toy-marketplace-server-nb0ccenf3-developersridoy-gmailcom.vercel.app/blogs")
         .then((res)=>res.json())
         .then((data)=>setBlogs(data))
         .catch((err)=>console.log(err.message))

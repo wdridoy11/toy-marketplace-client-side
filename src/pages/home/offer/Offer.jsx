@@ -10,7 +10,7 @@ const Offer = () => {
             <div className='grid grid-cols-2 gap-5'>
                 <div className='grid grid-cols-2 p-10 items-center bg-red-500 rounded-md'>
                     <div>
-                        <img className='w-3/5' src={offer} alt="" />
+                        <img className='w-3/5 hover:scale-110 duration-500' src={offer} alt="" />
                     </div>
                     <div>
                         <h3 className='text-4xl font-semibold text-white mb-2'>Stuffed Animals</h3>
@@ -20,7 +20,7 @@ const Offer = () => {
                 </div>
                 <div className='grid grid-cols-2 p-10 items-center bg-[#FFC22C] rounded-md'>
                     <div>
-                        <img className='w-4/5' src={offer1} alt="" />
+                        <img className='w-4/5 hover:scale-110 duration-500' src={offer1} alt="" />
                     </div>
                     <div>
                         <h3 className='text-4xl font-semibold text-white mb-2'>Wooden Toys</h3>
