@@ -10,6 +10,12 @@ const Contact = () => {
         const email = form.email.value;
         const phone = form.phone.value;
         const message = form.message.value;
+        // emailjs.sendForm('YOUR_EMAIL_SERVICE_NAME', 'YOUR_EMAIL_TEMPLATE_NAME', e.target, 'YOUR_USER_ID')
+        // .then((result) => {
+        //   this.setState({isAlertVisible: true})
+        // }, (error) => {
+        //   console.log(error.text);
+        // });
     }
 
 

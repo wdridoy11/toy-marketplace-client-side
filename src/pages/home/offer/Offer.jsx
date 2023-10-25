@@ -15,7 +15,7 @@ const Offer = () => {
                     <div>
                         <h3 className='text-4xl font-semibold text-white mb-2'>Stuffed Animals</h3>
                         <Link className='px-7 py-3 rounded-full bg-white text-black text-base font-medium inline-block
-                        hover:bg-black hover:text-white duration-500'>Shop Now</Link>
+                        hover:bg-black hover:text-white duration-500' to={'http://localhost:3000/all_toys'}>Shop Now</Link>
                     </div>
                 </div>
                 <div className='grid grid-cols-2 p-10 items-center bg-[#FFC22C] rounded-md'>
@@ -25,7 +25,7 @@ const Offer = () => {
                     <div>
                         <h3 className='text-4xl font-semibold text-white mb-2'>Wooden Toys</h3>
                         <Link className='px-7 py-3 rounded-full bg-white text-black text-base font-medium inline-block
-                        hover:bg-black hover:text-white duration-500'>Shop Now</Link>
+                        hover:bg-black hover:text-white duration-500' to={'http://localhost:3000/all_toys'}>Shop Now</Link>
                     </div>
                 </div>
             </div>
